@@ -6,23 +6,7 @@ import { PhotosService } from './_services/photos.services';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'photo-project';
-  yearsFolders: string[] = [];
-
-  constructor(
-    private photosService: PhotosService // service PhotosService
-    ) {
-  }
-
-  ngOnInit() {
-    this.getYearsFolders();
-  }
-
-  getYearsFolders() {
-    this.photosService.getYearsFolders().subscribe((folders) => { // Method getYearsFolders
-      this.yearsFolders = folders;
-    });
-  }
 
 }

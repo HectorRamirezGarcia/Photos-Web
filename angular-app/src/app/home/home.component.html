@@ -1,0 +1,5 @@
+<body>
+    <div *ngFor="let years of yearsFolders">
+      <a routerLink="/photosyear" (click)="selectYearFolder(years)">{{years}}</a>
+    </div>
+</body>

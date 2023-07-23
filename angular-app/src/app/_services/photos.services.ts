@@ -7,7 +7,7 @@ import { catchError, map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class PhotosService {
-  private baseUrl = 'https://localhost:3000'; // URL del servidor API
+  private baseUrl = 'http://localhost:3000'; // URL del servidor API
 
   constructor(private http: HttpClient) {}
 
@@ -23,9 +23,9 @@ export class PhotosService {
   }
 
   // Método para obtener las fotos de una carpeta específica
-  getPhotosInYearFolder(year: string): Observable<string[]> {
+  getPhotosInYearFolder(year: string): Observable<File[]> {
     const url = `${this.baseUrl}/years/${year}/`; // '/years' ruta del servidor API
-    return this.http.get<string[]>(url).pipe(
+    return this.http.get<File[]>(url).pipe(
       catchError((error: any) => {
         console.error('Error fetching photos for year:', error);
         return [];

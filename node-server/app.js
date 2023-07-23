@@ -10,6 +10,8 @@ const port = 3000;
 
 app.use(bodyParser.json());
 app.use(cors());
+app.use(express.static('public'));
+app.use('/years', express.static('years'));
 
 const yearsFolderPath = path.join(__dirname, 'years');
 
@@ -19,8 +21,8 @@ app.get('/years', async (req, res) => {
     const yearsFolders = await getFoldersFromDirectory(yearsFolderPath);
     res.json(yearsFolders);
   } catch (error) {
-    console.error('Error fetching years folders:', error);
-    res.status(500).json({ error: 'Error fetching years folders' });
+    console.error('Error fetching years data:', error);
+    res.status(500).json({ error: 'Error fetching years data' });
   }
 });
 
