@@ -1,5 +1,17 @@
 <body>
-    <div *ngFor="let years of yearsFolders">
-      <a routerLink="/photosyear" (click)="selectYearFolder(years)">{{years}}</a>
+  <div ngClass="container">
+    <div ngClass="row justify-content-center d-grid gap-2 p-3" *ngFor="let years of yearsFolders">
+      
+        <button routerLink="/photosyear" ngClass="noselect col-12" (click)="selectYearFolder(years)">
+          <span class="icon2"><fa-icon ngClass="fa-heart" [icon]="faHeart"></fa-icon>
+          </span>
+          <span class='text'> 
+            {{years}}
+          </span>
+          <span class="icon"><fa-icon ngClass="fa-heart" [icon]="faHeart"></fa-icon>
+          </span>
+        </button>
+      
     </div>
+  </div>
 </body>

@@ -1,5 +1,9 @@
 <body>
-    <h1>Masonry Gallery</h1>
+    <h1 ngClass="m-3"> 
+    <a routerLink="/" class="button-back" role="button"> 
+        <fa-icon ngClass="fa-arrow" [icon]="faArrowLeft"></fa-icon>
+    </a>
+    {{selectedYear}}</h1>
     <div class="gallery" id="gallery">
         <div class="gallery-item" *ngFor="let photo of photosInSelectedYear">
             <div class="content"><img src="http://localhost:3000/years/{{this.selectedYear}}/{{photo}}" alt=""></div>

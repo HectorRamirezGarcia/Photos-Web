@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PhotosService } from './../_services/photos.services';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
     templateUrl: './photos-years.component.html',
@@ -9,6 +11,7 @@ export class PhotosComponent implements OnInit {
     title = localStorage.getItem('year');
     selectedYear!: string;
     photosInSelectedYear: File[] = [];
+    faArrowLeft = faArrowLeft;
 
     constructor(
         private photosService: PhotosService // service PhotosService

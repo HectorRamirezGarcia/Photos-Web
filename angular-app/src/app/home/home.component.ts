@@ -1,13 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { PhotosService } from './../_services/photos.services';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
   title = 'photo-project';
   yearsFolders: string[] = [];
+  faHeart = faHeart;
 
   constructor(
     private photosService: PhotosService, // service PhotosService
